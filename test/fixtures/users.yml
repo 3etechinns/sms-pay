@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account: MyString
+  balance: 9.99
+  phone: MyString
+
+two:
+  account: MyString
+  balance: 9.99
+  phone: MyString
