@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       user = User.where(phone: phone.gsub('+52','')).first
       client.messages.create(
         from: "+15209993914",
-        to: "00521" + phone,
+        to: phone.gsub('+52','+521'),
         body: "Tu saldo disponible es de: #{user.balance}"
       )
 
