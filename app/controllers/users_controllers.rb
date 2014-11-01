@@ -20,9 +20,9 @@ class UsersController < ApplicationController
       Compropago::SMS.create(payment_id: charge.payment_id, customer_phone: phone, customer_company_phone: "MOVISTAR")
   
       if User.where(phone: phone).first
-        User.update(phone: phone, balance: amount.to_i)
+        User.update(phone: phone, balance: amount)
       else
-        User.create(phone: phone, balance: amount.to_i)
+        User.create(phone: phone, balance: amount)
       end
   
       respond_to json: nil, status: 200
