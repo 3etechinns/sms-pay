@@ -24,7 +24,6 @@ class UsersController < ApplicationController
       end
   
       respond_to json: nil, status: 200
-    end
 
     # Usuario solicita su saldo 
     elsif body.match('saldo')
