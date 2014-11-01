@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   
       Compropago::SMS.create(payment_id: charge.payment_id, customer_phone: phone, customer_company_phone: "MOVISTAR")
   
-      if charge
+      if User.where(phone: phone).first
+        User.update(phone: phone, balance: amount.to_i)
+      else
         User.create(phone: phone, balance: amount.to_i)
       end
   
