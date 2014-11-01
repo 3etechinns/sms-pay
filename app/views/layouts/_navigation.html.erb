@@ -1,0 +1,11 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'SMS Pay', root_path, class: 'navbar-brand' %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">Bienvenido, <%= current_org.name %></p></li>
+        <li><%= link_to 'Cerrar Sesión', logout_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

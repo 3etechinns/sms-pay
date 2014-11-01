@@ -1,4 +1,4 @@
-class OrganizationController < ApplicationController 
+class OrganizationsController < ApplicationController
   def new
   end
 
@@ -19,3 +19,4 @@ class OrganizationController < ApplicationController
   def organization_params
     params.require(:organization).permit(:email, :password, :password_confirmation, :name, :paypal)
   end
+end

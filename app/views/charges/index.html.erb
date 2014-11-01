@@ -1,0 +1,20 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Concepto</th>
+      <th>Monto</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charges.each do |charge| %>
+    <tr>
+      <td><%= charge.user.phone %></td>
+      <td><%= charge.concept %></td>
+      <td><%= charge.amount %></td>
+      <td><%= charge.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

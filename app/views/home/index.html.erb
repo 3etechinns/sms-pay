@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'SMS Pay', root_path, class: 'navbar-brand' %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Iniciar Sesión', login_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Recibe pagos con tu celular</h1>
+    <p>Con SMS Pay podrás recibir pagos de usuarios directamente desde su celular a tu cuenta de paypal.</p>
+    <p><%= link_to 'Registrate', new_organization_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+</div>
