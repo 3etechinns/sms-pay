@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :organizations do
     resources :charges
   end
-  get '/create_user' => 'users#create'
+  get '/endpoint' => 'users#endpoint'
 end
