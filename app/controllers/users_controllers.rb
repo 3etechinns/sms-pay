@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     # Usuario solicita su saldo 
     elsif body.match('saldo')
-      user = User.where(phone: phone.gsub('+52','').first)
+      user = User.where(phone: phone.gsub('+52','')).first
       client.messages.create(
         from: "+15209993914",
         to: "00521" + phone,
