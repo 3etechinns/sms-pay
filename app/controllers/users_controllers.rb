@@ -39,12 +39,4 @@ class UsersController < ApplicationController
       respond_to json: nil, status: 200
     end
   end
-
-  def check_balance
-    if params['api'] == "true"
-      phone = params['From']
-      body = params['Body']
-
-
-
 end
