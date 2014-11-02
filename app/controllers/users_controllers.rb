@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       Compropago.api_key = "sk_test_8305a01416373e4b4"
   
       amount = /(\d+)/.match(body)[0]
+      puts amount
       phone = phone.gsub('+52','')
   
       charge = Compropago::Charge.create({ product_price: amount,
@@ -18,11 +19,11 @@ class UsersController < ApplicationController
                                            payment_type: "OXXO"})
   
       Compropago::SMS.create(payment_id: charge.payment_id, customer_phone: phone, customer_company_phone: "MOVISTAR")
-  
+      
       if User.where(phone: phone).first
-        User.update(phone: phone, balance: amount)
+        User.update(phone: phone, balance: charge.product_information.product_price)
       else
-        User.create(phone: phone, balance: amount)
+        User.create(phone: phone, balance: charge.product_information.product_price)
       end
   
       respond_to json: nil, status: 200
