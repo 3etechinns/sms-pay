@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   
       Compropago::SMS.create(payment_id: charge.payment_id, customer_phone: phone, customer_company_phone: "MOVISTAR")
       
-      update_balance amount, phone
+      User.update_balance amount, phone
   
       respond_to json: nil, status: 200
 
