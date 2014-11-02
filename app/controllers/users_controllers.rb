@@ -23,7 +23,11 @@ class UsersController < ApplicationController
       u = User.where(phone: phone).first
       if u
         u.balance = charge.product_information.product_price
-        u.save
+        if u.save
+          puts u
+        else
+          puts u.errors.full_messages
+        end
       else
         User.create(phone: phone, balance: charge.product_information.product_price)
       end
